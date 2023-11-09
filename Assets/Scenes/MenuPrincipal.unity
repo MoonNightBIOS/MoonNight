@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 399581639}
   - component: {fileID: 399581638}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Salir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 727592287}
   - component: {fileID: 727592286}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Opciones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -675,8 +675,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Moon Night
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 219027e5a11c2914fbc72f7e4a70630e, type: 2}
-  m_sharedMaterial: {fileID: -8168427256959322072, guid: 219027e5a11c2914fbc72f7e4a70630e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 677a17d7192947a40834ed8fdf698a03, type: 2}
+  m_sharedMaterial: {fileID: -8168427256959322072, guid: 677a17d7192947a40834ed8fdf698a03, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -739,7 +739,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0.00026699525, z: 0.000091586306, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1360159947
@@ -910,7 +910,7 @@ GameObject:
   - component: {fileID: 1694800684}
   - component: {fileID: 1694800683}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Jugar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1073,7 +1073,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1719176819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc53abe75bb57ca4dbd370514174f23b, type: 3}
+  m_Script: {fileID: 11500000, guid: 08e4b6aa98a2c534f9461021bd8c3ea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1871182234
