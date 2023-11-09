@@ -17,12 +17,12 @@ public class Movimiento : MonoBehaviour
     // Teclas para Movimiento
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        /*if (Input.GetKeyDown(KeyCode.P))
         {
             animaciones.SetInteger("cambioEstado", 0);
         }
 
-        /*if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             animaciones.SetInteger("cambioEstado", 1);
         }
