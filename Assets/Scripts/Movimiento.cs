@@ -22,7 +22,7 @@ public class Movimiento : MonoBehaviour
             animaciones.SetInteger("cambioEstado", 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.C))
+        /*if (Input.GetKeyDown(KeyCode.C))
         {
             animaciones.SetInteger("cambioEstado", 1);
         }
@@ -30,16 +30,28 @@ public class Movimiento : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             animaciones.SetInteger("cambioEstado", 2);
-        }
+        }*/
 
         if (Input.GetKey(KeyCode.A))
         {
             transform.position -= new Vector3 (movimiento * Time.deltaTime, 0f, 0f);
+            animaciones.SetInteger("cambioEstado", 1);
+        }
+
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            animaciones.SetInteger("cambioEstado", 0);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             transform.position += new Vector3 (movimiento * Time.deltaTime, 0f, 0f);
+            animaciones.SetInteger("cambioEstado", 2);
+        }
+
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            animaciones.SetInteger("cambioEstado", 0);
         }
 
         if (Input.GetKey(KeyCode.W))
