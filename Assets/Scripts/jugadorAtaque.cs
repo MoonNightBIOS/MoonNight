@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class jugadorAtaque : MonoBehaviour
 {
-    float fuerza;
+    float fuerza = 10;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
