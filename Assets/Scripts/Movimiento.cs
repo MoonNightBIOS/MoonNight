@@ -36,6 +36,7 @@ public class Movimiento : MonoBehaviour
         {
             transform.position -= new Vector3 (movimiento * Time.deltaTime, 0f, 0f);
             animaciones.SetInteger("cambioEstado", 1);
+
         }
 
         if (Input.GetKeyUp(KeyCode.A))
