@@ -7,11 +7,13 @@ public class Movimiento : MonoBehaviour
     Animator animaciones;
     // Variables
     float movimiento;
+    Rigidbody2D rb2D;
 
     void Start()
     { 
         animaciones = GetComponent<Animator>();
         movimiento = 10f;
+        rb2D = GetComponent<Rigidbody2D>();
     }
 
     // Teclas para Movimiento
@@ -48,6 +50,17 @@ public class Movimiento : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
         {
             transform.position -= new Vector3 (0f, movimiento * Time.deltaTime, 0f);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb2D.AddForce(new Vector2 (0f, 10f), ForceMode2D.Impulse);
+            animaciones.SetInteger("cambioEstado", 3);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            animaciones.SetInteger("cambioEstado", 0);
         }
     }
 }
