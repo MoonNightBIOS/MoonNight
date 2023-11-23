@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Movimiento : MonoBehaviour
 {
-    Animator animaciones;
     // Variables
+    Animator animaciones;
     float movimiento;
     Rigidbody2D rb2D;
 
