@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class menuOpciones : MonoBehaviour
 {
     [SerializeField] Slider barraVolumen;
-    [SerializeField] float  volumenvalor;
+    [SerializeField] float  volumenValor;
     [SerializeField] Image  imagenMute;
 
     void Start()
@@ -20,19 +20,22 @@ public class menuOpciones : MonoBehaviour
 
     public void MoverBarra(float valor)
     {
-        volumenvalor = valor;
-        PlayerPrefs.SetFloat("volumenAudio", volumenvalor);
+        volumenValor = valor;
+        PlayerPrefs.SetFloat("volumenAudio", volumenValor);
         AudioListener.volume = barraVolumen.value;
+        Mute();
     }
 
     public void Mute()
     {
-
-    }
-
-    void Update()
-    {
-
+        if (volumenValor == 0)
+        {
+            imagenMute.enabled = true;
+        }
+        else
+        {
+            imagenMute.enabled = false;
+        }
     }
 
 
