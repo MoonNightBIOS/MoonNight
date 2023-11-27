@@ -29,8 +29,6 @@ public class jugadorAtaque : MonoBehaviour
         {
             hitderecha.transform.GetComponent<SpriteRenderer>().color = Color.red;
             Destroy(hitderecha.transform.gameObject,1f);
-
-
         }
 
 

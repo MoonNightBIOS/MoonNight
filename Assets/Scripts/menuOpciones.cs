@@ -15,7 +15,6 @@ public class menuOpciones : MonoBehaviour
         barraVolumen.value = PlayerPrefs.GetFloat("volumenAudio", 0.5f);
         AudioListener.volume = barraVolumen.value;
         Mute();
-
     }
 
     public void MoverBarra(float valor)
@@ -23,8 +22,7 @@ public class menuOpciones : MonoBehaviour
         volumenValor = valor;
         PlayerPrefs.SetFloat("volumenAudio", volumenValor);
         AudioListener.volume = barraVolumen.value;
-        Mute();
-    }
+        Mute();    }
 
     public void Mute()
     {
