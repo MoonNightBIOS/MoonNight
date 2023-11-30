@@ -21,7 +21,6 @@ public class AtaqueJugador : MonoBehaviour
         {
             Debug.Log("Colisiona");
             Col.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-
         }
 
     }
