@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movimiento : MonoBehaviour
 {
     // Variables
+    public float velocidad; 
     Animator animaciones;
     float movimiento;
     Rigidbody2D rb2D;
@@ -12,7 +13,7 @@ public class Movimiento : MonoBehaviour
     void Start()
     { 
         animaciones = GetComponent<Animator>();
-        movimiento = 10f;
+        movimiento = 8f;
         rb2D = GetComponent<Rigidbody2D>();
     }
 
@@ -22,7 +23,7 @@ public class Movimiento : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position -= new Vector3 (movimiento * Time.deltaTime, 0f, 0f);
+            transform.Translate(Vector3.left * velocidad * Time.deltaTime);
             animaciones.SetInteger("cambioEstado", 1);
         }
 
@@ -33,7 +34,7 @@ public class Movimiento : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += new Vector3 (movimiento * Time.deltaTime, 0f, 0f);
+            transform.Translate(Vector3.right * velocidad * Time.deltaTime);
             animaciones.SetInteger("cambioEstado", 2);
         }
 
@@ -44,12 +45,12 @@ public class Movimiento : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += new Vector3 (0f, movimiento * Time.deltaTime, 0f);
+            transform.Translate(Vector3.up * velocidad * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position -= new Vector3 (0f, movimiento * Time.deltaTime, 0f);
+            transform.Translate(Vector3.down * velocidad * Time.deltaTime);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
