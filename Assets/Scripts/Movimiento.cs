@@ -46,6 +46,12 @@ public class Movimiento : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             transform.Translate(Vector3.up * velocidad * Time.deltaTime);
+            animaciones.SetInteger("cambioEstado", 2);
+        }
+
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            animaciones.SetInteger("cambioEstado", 0);
         }
 
         if (Input.GetKey(KeyCode.S))
