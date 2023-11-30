@@ -12,7 +12,7 @@ public class Movimiento : MonoBehaviour
     void Start()
     { 
         animaciones = GetComponent<Animator>();
-        movimiento = 10f;
+        movimiento = 8f;
         rb2D = GetComponent<Rigidbody2D>();
     }
 
