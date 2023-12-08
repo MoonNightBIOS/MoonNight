@@ -11,15 +11,27 @@ public class menuPausa : MonoBehaviour
         Menu = GetComponent<GameObject>();
     }
 
-    
+
     void Update()
     {
+        pausa();
+    }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+    public void pausa()
+    {
+        if (Input.GetKey(KeyCode.Escape))
         {
             Menu.SetActive(true);
             Time.timeScale = 0;
-            
+        }
+    }
+
+    public void reanudar()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Menu.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }
