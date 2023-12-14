@@ -5,7 +5,7 @@ using UnityEngine;
 public class menuPausa : MonoBehaviour
 {
     [SerializeField] private GameObject menu;
-    
+
 
     void Update()
     {
@@ -16,26 +16,19 @@ public class menuPausa : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            Time.timeScale = 0;
-            menu.SetActive(true);            
+            Time.timeScale = 0f;
+            menu.SetActive(true);
         }
     }
 
     public void reanudar()
     {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            Time.timeScale = 1;
-            menu.SetActive(false);            
-        }
+        Time.timeScale = 1f;
+        menu.SetActive(false);
     }
 
     public void opciones()
     {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            Time.timeScale = 1;
-            menu.SetActive(false);
-        }
+
     }
 }
