@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class menuOpciones : MonoBehaviour
 {
     [SerializeField] Slider barraVolumen;
-    [SerializeField] float  volumenValor;
-    [SerializeField] Image  imagenMute;
+    [SerializeField] float volumenValor;
+    [SerializeField] Image imagenMute;
 
     void Start()
     {
@@ -37,6 +38,10 @@ public class menuOpciones : MonoBehaviour
         }
     }
 
+    public void volver()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
 }
 

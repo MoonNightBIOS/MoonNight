@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class menuPausa : MonoBehaviour
 {
     [SerializeField] private GameObject menu;
-
 
     void Update()
     {
@@ -29,6 +29,11 @@ public class menuPausa : MonoBehaviour
 
     public void opciones()
     {
+        SceneManager.LoadScene("MenuOpciones", LoadSceneMode.Additive);
+    }
 
+    public void salir()
+    {
+        SceneManager.LoadScene("MenuPrincipal", LoadSceneMode.Single);
     }
 }
