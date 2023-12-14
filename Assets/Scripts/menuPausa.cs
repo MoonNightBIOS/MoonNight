@@ -1,16 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class menuPausa : MonoBehaviour
 {
-    [SerializeField] GameObject Menu;
-    void Start()
-    {
-        Menu = GetComponent<GameObject>();
-    }
-
+    [SerializeField] private GameObject menu;
+    
 
     void Update()
     {
@@ -21,8 +16,8 @@ public class menuPausa : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            Menu.SetActive(true);
             Time.timeScale = 0;
+            menu.SetActive(true);            
         }
     }
 
@@ -30,8 +25,17 @@ public class menuPausa : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            Menu.SetActive(true);
-            Time.timeScale = 0;
+            Time.timeScale = 1;
+            menu.SetActive(false);            
+        }
+    }
+
+    public void opciones()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Time.timeScale = 1;
+            menu.SetActive(false);
         }
     }
 }
