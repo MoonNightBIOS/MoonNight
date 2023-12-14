@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/MenuOpciones.unity
     guid: a0f7916cb7b273c42bfe94b2534f72f7
   - enabled: 1
-    path: Assets/Scenes/SegundoNivel.unity
+    path: Assets/Scenes/Nivel.unity
     guid: c1b66ba4f7584fe4b8f80331bbe96c48
   - enabled: 1
     path: Assets/Scenes/TercerNivel(Player).unity
