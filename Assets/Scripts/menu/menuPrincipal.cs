@@ -7,7 +7,7 @@ public class menuPrincipal : MonoBehaviour
 {
     public void Jugar()
     {
-        SceneManager.LoadScene("SegundoNivel", LoadSceneMode.Single);
+        SceneManager.LoadScene("Nivel-1", LoadSceneMode.Single);
     }
     public void Opciones()
     {
