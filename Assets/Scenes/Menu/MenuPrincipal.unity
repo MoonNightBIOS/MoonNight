@@ -870,7 +870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1871182234}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1588703189
@@ -1033,7 +1033,6 @@ GameObject:
   - component: {fileID: 1719176820}
   - component: {fileID: 1719176821}
   - component: {fileID: 1719176822}
-  - component: {fileID: 1719176823}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1164,18 +1163,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1719176823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1719176819}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f292d7973c764c640850702029a5bda6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1871182234
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,7 +1176,7 @@ GameObject:
   - component: {fileID: 1871182236}
   - component: {fileID: 1871182235}
   m_Layer: 5
-  m_Name: Menu
+  m_Name: Menu-Principal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
