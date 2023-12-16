@@ -24,24 +24,24 @@ public class Movimiento : MonoBehaviour
             transform.Translate(Vector3.left * velocidad * Time.deltaTime);            
         }
 
-        if (Input.GetKeyUp(KeyCode.A))
-        {
-            animaciones.SetInteger("cambioEstado", 0);
-        }
+        //if (Input.GetKeyUp(KeyCode.A))
+        //{
+        //    animaciones.SetInteger("cambioEstado", 0);
+        //}
 
         if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(Vector3.right * velocidad * Time.deltaTime);           
         }
 
-        if (Input.GetKeyUp(KeyCode.D))
-        {
-            animaciones.SetInteger("cambioEstado", 0);
-        }
+        //if (Input.GetKeyUp(KeyCode.D))
+        //{
+        //    animaciones.SetInteger("cambioEstado", 0);
+        //}
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb2D.AddForce(new Vector2(0f, 10f), ForceMode2D.Impulse);
+            rb2D.AddForce(new Vector2(3f, 5f), ForceMode2D.Impulse);
         }
 
         if (Input.GetKey(KeyCode.X))
