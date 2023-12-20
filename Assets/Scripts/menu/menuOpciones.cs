@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class menuOpciones : MonoBehaviour
 {
-    [SerializeField] public Slider barraVolumen;
-    [SerializeField] public float volumenValor;
-    [SerializeField] public Image imagenMute;
+    [SerializeField]  Slider barraVolumen;
+    [SerializeField]  float volumenValor;
+    [SerializeField]  Image imagenMute;
 
     void Start()
     {
-        barraVolumen.value = PlayerPrefs.GetFloat("volumenAudio", 0.5f);
+        barraVolumen.value = PlayerPrefs.GetFloat("volumenAudio", 1f);
         AudioListener.volume = barraVolumen.value;
         Mute();
     }
@@ -38,10 +37,10 @@ public class menuOpciones : MonoBehaviour
         }
     }
 
-   /* public void volver()
+    public void Volver()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }*/
+    }
 
 }
 
