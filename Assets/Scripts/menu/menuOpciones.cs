@@ -12,9 +12,11 @@ public class menuOpciones : MonoBehaviour
     [SerializeField] Image imagenMute;
     [SerializeField] Toggle botonPantalla;
     [SerializeField] TMP_Dropdown comboboxCalidad;
+    [SerializeField] TMP_Dropdown comboboxResolucion;
     [SerializeField] float volumenValor;
     [SerializeField] float brilloValor;
-    [SerializeField] int   valorCalidad;
+    [SerializeField] int valorCalidad;
+    Resolution[] resoluciones;
 
 
     void Start()
@@ -24,22 +26,24 @@ public class menuOpciones : MonoBehaviour
         Pantalla();
         Brillo();
         Calidad();
+        RevisarResoluciones();
+
     }
 
-    public void Sonido()
+    void Sonido()
     {
         barraVolumen.value = PlayerPrefs.GetFloat("volumenAudio", 0.5f);
         AudioListener.volume = barraVolumen.value;
     }
 
 
-    public void Brillo()
+    void Brillo()
     {
         barraBrillo.value = PlayerPrefs.GetFloat("brillo", 0.5f);
         alpha.color = new Color(alpha.color.r, alpha.color.g, alpha.color.b, barraBrillo.value);
     }
 
-    public void Pantalla()
+    void Pantalla()
     {
         if (Screen.fullScreen)
         {
@@ -49,9 +53,10 @@ public class menuOpciones : MonoBehaviour
         {
             botonPantalla.isOn = false;
         }
+
     }
 
-    public void Calidad() 
+    void Calidad()
     {
         valorCalidad = PlayerPrefs.GetInt("valorBox", 3);
         comboboxCalidad.value = valorCalidad;
@@ -98,7 +103,35 @@ public class menuOpciones : MonoBehaviour
         valorCalidad = comboboxCalidad.value;
     }
 
+    public void RevisarResoluciones()
+    {
+        resoluciones = Screen.resolutions;
+        comboboxResolucion.ClearOptions();
+        List<string> opciones = new List<string>();
+        int resolucionActual = 0;
 
+        for (int i = 0; i < resoluciones.Length; i++)
+        {
+            string opc = resoluciones[i].width + "X" + resoluciones[i].height;
+            opciones.Add(opc);
+
+            if(Screen.fullScreen && resoluciones[i].width == Screen.currentResolution.width && resoluciones[i].height == Screen.currentResolution.height)
+            {
+                resolucionActual = i;
+            }
+        }
+        comboboxResolucion.AddOptions(opciones);
+        comboboxResolucion.value = resolucionActual;
+        comboboxResolucion.RefreshShownValue();
+        comboboxResolucion.value = PlayerPrefs.GetInt("ResolucionIndex", 0);
+
+    }
+    public void CambiarResoluciones( int indexRes)
+    {
+        PlayerPrefs.SetInt("ResolucionIndex", comboboxResolucion.value);
+        Resolution resolucion = resoluciones[indexRes];
+        Screen.SetResolution(resolucion.width, resolucion.height, Screen.fullScreen);
+    }
 
     public void Volver()
     {
