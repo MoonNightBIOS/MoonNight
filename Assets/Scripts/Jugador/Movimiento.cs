@@ -31,17 +31,19 @@ public class Movimiento : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * velocidad * Time.deltaTime);           
+            transform.Translate(Vector3.right * velocidad * Time.deltaTime);
+            animaciones.SetInteger("cambioEstado", 3);
         }
 
-        //if (Input.GetKeyUp(KeyCode.D))
-        //{
-        //    animaciones.SetInteger("cambioEstado", 0);
-        //}
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            animaciones.SetInteger("cambioEstado", 0);
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb2D.AddForce(new Vector2(3f, 5f), ForceMode2D.Impulse);
+            animaciones.SetInteger("cambioEstado", 6);
         }
 
         if (Input.GetKey(KeyCode.X))
@@ -52,6 +54,16 @@ public class Movimiento : MonoBehaviour
         if (Input.GetKey(KeyCode.C))
         {
             animaciones.SetInteger("cambioEstado", 2);
+        }
+        
+        if (Input.GetKey(KeyCode.Z))
+        {
+            animaciones.SetInteger("cambioEstado", 4);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Z))
+        {
+            animaciones.SetInteger("cambioEstado", 5);
         }
     }
 }
