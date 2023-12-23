@@ -51,7 +51,7 @@ public class Movimiento : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Space)) // SALTA
+        if (Input.GetKeyDown(KeyCode.Space) && piso == true) // SALTA
         {
             if (giro == true)
             {
