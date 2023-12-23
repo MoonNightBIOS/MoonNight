@@ -7,98 +7,77 @@ using UnityEngine;
 public class Movimiento : MonoBehaviour
 {
     // Variables
-    public float velocidad; 
+    [SerializeField] float velocidad;
+    [SerializeField] float salto;
     Animator animaciones;
     Rigidbody2D rb2D;
     SpriteRenderer personaje;
-    BoxCollider2D pies;
-    bool giro = false;
+    bool giro = true;
     bool piso = true;
 
     void Start()
-    { 
+    {
+        velocidad = 4f;
+        salto = 6f;
         this.animaciones = GetComponent<Animator>();
         this.rb2D = GetComponent<Rigidbody2D>();
         this.personaje = GetComponent<SpriteRenderer>();
-        this.pies = GetComponent<BoxCollider2D>();
     }
 
-    
+
     void Update()
     {
         Moverse();
         Animaciones();
-
     }
 
 
     // MECANICAS
     public void Moverse()
     {
-        if (Input.GetKey(KeyCode.A)) //MOVIMIENTO A LA IZQUIERDA
+
+        float Horizontal = Input.GetAxis("Horizontal");
+
+        rb2D.velocity = new Vector2(Horizontal * velocidad, rb2D.velocity.y);
+
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) && piso == true) // SALTA
         {
-            transform.Translate(Vector3.left * velocidad * Time.deltaTime);
-            personaje.flipX = true;
-            giro = true;
-        }
-
-
-        if (Input.GetKey(KeyCode.D)) // MOVIMIENTO A LA DERECHA
-        {
-            transform.Translate(Vector3.right * velocidad * Time.deltaTime);
-            personaje.flipX = false;
-            giro = false;
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.Space) && piso == true) // SALTA
-        {
-            if (giro == true)
+            if (giro == false)
             {
-                rb2D.AddForce(new Vector2(-3f, 5f), ForceMode2D.Impulse);
+                rb2D.AddForce(new Vector2(-1f, salto), ForceMode2D.Impulse);
             }
             else
             {
-                rb2D.AddForce(new Vector2(3f, 5f), ForceMode2D.Impulse);
+                rb2D.AddForce(new Vector2(1f, salto), ForceMode2D.Impulse);
             }
         }
-    }
 
-    private void OnCollisionEnter2D(Collision2D col)
-    {
-        if(col.gameObject.tag == "Piso")
-        {
-            piso = true;
-        }
-        else
-        {
-            piso = false;
-        }
+        
     }
-
+    
     public void Animaciones()
     {
         //ANIMACIONES
 
-        if (Input.GetKey(KeyCode.A)) // ANIMACION DE MOVIMIENTO A LA IZQUIERDA
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) // ANIMACION DE MOVIMIENTO A LA IZQUIERDA
         {
             animaciones.SetInteger("cambioEstado", 3);
         }
-        else if (Input.GetKeyUp(KeyCode.A)) // CAMBIO DE ANIMACION A QUIETO
+        else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow)) // CAMBIO DE ANIMACION A QUIETO
         {
             animaciones.SetInteger("cambioEstado", 0);
         }
 
-        if (Input.GetKey(KeyCode.D)) // MOVIMIENTO A LA DERECHA
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) // MOVIMIENTO A LA DERECHA
         {
             animaciones.SetInteger("cambioEstado", 3);
         }
-        else if (Input.GetKeyUp(KeyCode.D)) // CAMBIO DE ANIMACION A QUIETO
+        else if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow)) // CAMBIO DE ANIMACION A QUIETO
         {
             animaciones.SetInteger("cambioEstado", 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)) // SALTA
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) // SALTA
         {
             animaciones.SetInteger("cambioEstado", 6);
         }
@@ -118,7 +97,7 @@ public class Movimiento : MonoBehaviour
             animaciones.SetInteger("cambioEstado", 4);
         }
 
-        if (Input.GetKeyUp(KeyCode.Z))
+        if (Input.GetKeyUp(KeyCode.Z)) // CANCELACION DE LA ANIMACION DE ATAQUE
         {
             animaciones.SetInteger("cambioEstado", 0);
         }
