@@ -7,18 +7,18 @@ using UnityEngine;
 public class Movimiento : MonoBehaviour
 {
     // Variables
-    [SerializeField] float velocidad;
-    [SerializeField] float salto;
+    [SerializeField, Range(0, 100)] float velocidad;
+    [SerializeField, Range(0, 100)] float salto;
     Animator animaciones;
     Rigidbody2D rb2D;
     SpriteRenderer personaje;
-    bool giro = true;
+    bool direccion = true;
     bool piso = true;
 
     void Start()
     {
-        velocidad = 4f;
-        salto = 6f;
+        velocidad = 6f;
+        salto = 12f;
         this.animaciones = GetComponent<Animator>();
         this.rb2D = GetComponent<Rigidbody2D>();
         this.personaje = GetComponent<SpriteRenderer>();
@@ -28,6 +28,7 @@ public class Movimiento : MonoBehaviour
     void Update()
     {
         Moverse();
+        Salto();
         Animaciones();
     }
 
@@ -35,26 +36,29 @@ public class Movimiento : MonoBehaviour
     // MECANICAS
     public void Moverse()
     {
-
         float Horizontal = Input.GetAxis("Horizontal");
 
         rb2D.velocity = new Vector2(Horizontal * velocidad, rb2D.velocity.y);
-
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) && piso == true) // SALTA
-        {
-            if (giro == false)
-            {
-                rb2D.AddForce(new Vector2(-1f, salto), ForceMode2D.Impulse);
-            }
-            else
-            {
-                rb2D.AddForce(new Vector2(1f, salto), ForceMode2D.Impulse);
-            }
-        }
-
-        
+        Orientacion(Horizontal);
     }
-    
+
+    public void Salto()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) // SALTA
+        {
+            rb2D.AddForce(Vector2.up * salto, ForceMode2D.Impulse);
+        }
+    }
+
+    void Orientacion(float dir)
+    {
+        if ((direccion == true && dir < 0) || (direccion == false && dir > 0))
+        {
+            direccion = !direccion;
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+        }
+    }
+
     public void Animaciones()
     {
         //ANIMACIONES

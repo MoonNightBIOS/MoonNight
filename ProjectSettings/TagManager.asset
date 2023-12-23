@@ -9,7 +9,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Fondo
   - Water
   - UI
   - 
@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Fondo
+    uniqueID: 2134685419
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

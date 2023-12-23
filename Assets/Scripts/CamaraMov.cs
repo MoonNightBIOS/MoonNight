@@ -24,7 +24,7 @@ public class CamaraMov : MonoBehaviour
 
     void MovimientoCamara() 
     {
-        camara.transform.position = new Vector3(jugador.transform.position.x, jugador.transform.position.y, -10);
+        camara.transform.position = new Vector2(jugador.transform.position.x, jugador.transform.position.y);
     }
 
 }
