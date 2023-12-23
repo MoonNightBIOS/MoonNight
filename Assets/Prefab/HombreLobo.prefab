@@ -87,8 +87,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3877372182877498748}
   - component: {fileID: 4753740166560773505}
+  - component: {fileID: 8915001153256563905}
   - component: {fileID: 8274449136480859021}
-  - component: {fileID: 6335851992631533776}
   - component: {fileID: 6754932912503578960}
   - component: {fileID: 7471847908912561235}
   m_Layer: 0
@@ -166,6 +166,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8915001153256563905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5638844652665819979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4dfdce02093bc41995fbf0505ababb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidad: 0
+  salto: 0
+  capaSuelo:
+    serializedVersion: 2
+    m_Bits: 64
+  colliderPies: {fileID: 0}
 --- !u!95 &8274449136480859021
 Animator:
   serializedVersion: 5
@@ -187,19 +205,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6335851992631533776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5638844652665819979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a4dfdce02093bc41995fbf0505ababb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidad: 4
 --- !u!70 &6754932912503578960
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

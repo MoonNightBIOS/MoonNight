@@ -9,11 +9,12 @@ public class Movimiento : MonoBehaviour
     // Variables
     [SerializeField, Range(0, 100)] float velocidad;
     [SerializeField, Range(0, 100)] float salto;
+    [SerializeField] LayerMask capaSuelo;
     Animator animaciones;
     Rigidbody2D rb2D;
-    SpriteRenderer personaje;
+    [SerializeField] BoxCollider2D colliderPies;
     bool direccion = true;
-    bool piso = true;
+   // bool piso = true;
 
     void Start()
     {
@@ -21,7 +22,7 @@ public class Movimiento : MonoBehaviour
         salto = 12f;
         this.animaciones = GetComponent<Animator>();
         this.rb2D = GetComponent<Rigidbody2D>();
-        this.personaje = GetComponent<SpriteRenderer>();
+        this.colliderPies=GetComponent<BoxCollider2D>();
     }
 
 
@@ -44,7 +45,7 @@ public class Movimiento : MonoBehaviour
 
     public void Salto()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) // SALTA
+        if (/*Input.GetKeyDown(KeyCode.Space) ||*/ Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) && Suelo()) // MECANICA DE SALTO
         {
             rb2D.AddForce(Vector2.up * salto, ForceMode2D.Impulse);
         }
@@ -57,6 +58,12 @@ public class Movimiento : MonoBehaviour
             direccion = !direccion;
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         }
+    }
+
+    bool Suelo()
+    {
+     RaycastHit2D rayo = Physics2D.BoxCast(colliderPies.bounds.center, new Vector2(colliderPies.bounds.size.x, colliderPies.bounds.size.y), 0f, Vector2.down, 0.2f, capaSuelo);
+     return rayo.collider != null;
     }
 
     public void Animaciones()
@@ -81,7 +88,7 @@ public class Movimiento : MonoBehaviour
             animaciones.SetInteger("cambioEstado", 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) // SALTA
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) && Suelo()) // SALTA
         {
             animaciones.SetInteger("cambioEstado", 6);
         }
