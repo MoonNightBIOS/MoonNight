@@ -6,19 +6,19 @@ using UnityEngine;
 
 public class Movimiento : MonoBehaviour
 {
-    // Variables
+    [SerializeField] AudioManager audioManager;
+    [SerializeField] AudioClip clip;
+    private Animator animaciones;
+
     [SerializeField, Range(0, 100)] private float velocidad;
     [SerializeField, Range(0, 100)] private float salto;
     [SerializeField] private int saltosMax;
     [SerializeField] private int contadorSaltos;
     [SerializeField] private LayerMask capaSuelo;
-    private Animator animaciones;
-    private Rigidbody2D rb2D;
     [SerializeField] private BoxCollider2D colliderPies;
     private bool direccion = true;
-   // private bool transformacion = false;
+    private Rigidbody2D rb2D;
 
-   
     void Start()
     {
         saltosMax = 2;
@@ -27,7 +27,7 @@ public class Movimiento : MonoBehaviour
         salto = 12f;
         this.animaciones = GetComponent<Animator>();
         this.rb2D = GetComponent<Rigidbody2D>();
-        this.colliderPies=GetComponent<BoxCollider2D>();
+        this.colliderPies = GetComponent<BoxCollider2D>();
     }
 
 
@@ -59,7 +59,7 @@ public class Movimiento : MonoBehaviour
 
     public void Salto() // MECANICA DE SALTO
     {
-        if (Input.GetKeyDown(KeyCode.Space) && contadorSaltos > 1 ) 
+        if (Input.GetKeyDown(KeyCode.Space) && contadorSaltos > 1)
         {
             contadorSaltos--;
             rb2D.velocity = new Vector2(rb2D.velocity.x, 0f);
@@ -73,22 +73,22 @@ public class Movimiento : MonoBehaviour
 
     bool Suelo() // COMPROBAR QUE TOQUE EL SUELO 
     {
-      RaycastHit2D rayo = Physics2D.BoxCast(colliderPies.bounds.center, new Vector2(colliderPies.bounds.size.x, colliderPies.bounds.size.y), 0f, Vector2.down, 0.5f, capaSuelo);
-      return rayo.collider != null; 
+        RaycastHit2D rayo = Physics2D.BoxCast(colliderPies.bounds.center, new Vector2(colliderPies.bounds.size.x, colliderPies.bounds.size.y), 0f, Vector2.down, 0.5f, capaSuelo);
+        return rayo.collider != null;
     }
 
-   /* void ComprobarTransformacion()
-    {
-        if (Input.GetKey(KeyCode.X))
-        {
-            transformacion = true;
-        }
+    /* void ComprobarTransformacion()
+     {
+         if (Input.GetKey(KeyCode.X))
+         {
+             transformacion = true;
+         }
 
-        else if (Input.GetKey(KeyCode.C))
-        {
-            transformacion = false;
-        }
-    }*/
+         else if (Input.GetKey(KeyCode.C))
+         {
+             transformacion = false;
+         }
+     }*/
 
     public void Animaciones()
     {
@@ -112,15 +112,17 @@ public class Movimiento : MonoBehaviour
             animaciones.SetInteger("cambioEstado", 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) && Suelo()) // SALTA
+        if (Input.GetKey(KeyCode.Space) && contadorSaltos > 1) // SALTA
         {
             animaciones.SetInteger("cambioEstado", 6);
+
         }
 
         if (Input.GetKey(KeyCode.X)) // ANIMACION DE SE TRANSFORMA
         {
             animaciones.SetInteger("cambioEstado", 1);
             animaciones.SetBool("transformacion", true);
+            AudioManager.audioManager.Reproducir(clip);
         }
 
         if (Input.GetKey(KeyCode.C)) // ANIMACION DE SE DESTRANSFORMA
