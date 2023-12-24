@@ -7,17 +7,21 @@ using UnityEngine;
 public class Movimiento : MonoBehaviour
 {
     // Variables
-    [SerializeField, Range(0, 100)] float velocidad;
-    [SerializeField, Range(0, 100)] float salto;
-    [SerializeField] LayerMask capaSuelo;
-    Animator animaciones;
-    Rigidbody2D rb2D;
-    [SerializeField] BoxCollider2D colliderPies;
-    bool direccion = true;
+    [SerializeField, Range(0, 100)] private float velocidad;
+    [SerializeField, Range(0, 100)] private float salto;
+    [SerializeField] private int saltosMax;
+    [SerializeField] private int contadorSaltos;
+    [SerializeField] private LayerMask capaSuelo;
+    private Animator animaciones;
+    private Rigidbody2D rb2D;
+    [SerializeField] private BoxCollider2D colliderPies;
+    private bool direccion = true;
    // bool piso = true;
 
     void Start()
     {
+        saltosMax = 2;
+        contadorSaltos = saltosMax;
         velocidad = 6f;
         salto = 12f;
         this.animaciones = GetComponent<Animator>();
@@ -38,17 +42,8 @@ public class Movimiento : MonoBehaviour
     public void Moverse()
     {
         float Horizontal = Input.GetAxis("Horizontal");
-
         rb2D.velocity = new Vector2(Horizontal * velocidad, rb2D.velocity.y);
         Orientacion(Horizontal);
-    }
-
-    public void Salto()
-    {
-        if (/*Input.GetKeyDown(KeyCode.Space) ||*/ Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) && Suelo()) // MECANICA DE SALTO
-        {
-            rb2D.AddForce(Vector2.up * salto, ForceMode2D.Impulse);
-        }
     }
 
     void Orientacion(float dir)
@@ -60,10 +55,24 @@ public class Movimiento : MonoBehaviour
         }
     }
 
+    public void Salto()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && contadorSaltos > 1 ) // MECANICA DE SALTO
+        {
+            contadorSaltos--;
+            rb2D.velocity = new Vector2(rb2D.velocity.x, 0f);
+            rb2D.AddForce(Vector2.up * salto, ForceMode2D.Impulse);
+        }
+        if (Suelo())
+        {
+            contadorSaltos = saltosMax;
+        }
+    }
+
     bool Suelo()
     {
-     RaycastHit2D rayo = Physics2D.BoxCast(colliderPies.bounds.center, new Vector2(colliderPies.bounds.size.x, colliderPies.bounds.size.y), 0f, Vector2.down, 0.2f, capaSuelo);
-     return rayo.collider != null;
+      RaycastHit2D rayo = Physics2D.BoxCast(colliderPies.bounds.center, new Vector2(colliderPies.bounds.size.x, colliderPies.bounds.size.y), 0f, Vector2.down, 0.5f, capaSuelo);
+      return rayo.collider != null; 
     }
 
     public void Animaciones()
