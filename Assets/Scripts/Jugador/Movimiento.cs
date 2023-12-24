@@ -16,6 +16,7 @@ public class Movimiento : MonoBehaviour
     private Rigidbody2D rb2D;
     [SerializeField] private BoxCollider2D colliderPies;
     private bool direccion = true;
+    private bool transformacion = false;
    // bool piso = true;
 
     void Start()
@@ -35,6 +36,7 @@ public class Movimiento : MonoBehaviour
         Moverse();
         Salto();
         Animaciones();
+        ComprobarTransformacion();
     }
 
 
@@ -75,6 +77,19 @@ public class Movimiento : MonoBehaviour
       return rayo.collider != null; 
     }
 
+    void ComprobarTransformacion()
+    {
+        if (Input.GetKey(KeyCode.X))
+        {
+            transformacion = true;
+        }
+
+        else if (Input.GetKey(KeyCode.C))
+        {
+            transformacion = false;
+        }
+    }
+
     public void Animaciones()
     {
         //ANIMACIONES
@@ -102,14 +117,16 @@ public class Movimiento : MonoBehaviour
             animaciones.SetInteger("cambioEstado", 6);
         }
 
-        if (Input.GetKey(KeyCode.X)) // ANIMACION DE SE TRANSFORMA
+        if (Input.GetKey(KeyCode.X) && transformacion == true) // ANIMACION DE SE TRANSFORMA
         {
             animaciones.SetInteger("cambioEstado", 1);
+            animaciones.SetBool("tranformacion", true);
         }
 
-        if (Input.GetKey(KeyCode.C)) // ANIMACION DE SE DESTRANSFORMA
+        if (Input.GetKey(KeyCode.C) && transformacion == false) // ANIMACION DE SE DESTRANSFORMA
         {
             animaciones.SetInteger("cambioEstado", 2);
+            animaciones.SetBool("tranformacion", false);
         }
 
         if (Input.GetKey(KeyCode.Z)) // ANIMACION DE ATAQUE
