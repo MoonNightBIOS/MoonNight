@@ -16,8 +16,7 @@ public class Movimiento : MonoBehaviour
     private Rigidbody2D rb2D;
     [SerializeField] private BoxCollider2D colliderPies;
     private bool direccion = true;
-   // bool piso = true;
-
+   
     void Start()
     {
         saltosMax = 2;
@@ -55,9 +54,9 @@ public class Movimiento : MonoBehaviour
         }
     }
 
-    public void Salto()
+    public void Salto() // MECANICA DE SALTO
     {
-        if (Input.GetKeyDown(KeyCode.Space) && contadorSaltos > 1 ) // MECANICA DE SALTO
+        if (Input.GetKeyDown(KeyCode.Space) && contadorSaltos > 1 ) 
         {
             contadorSaltos--;
             rb2D.velocity = new Vector2(rb2D.velocity.x, 0f);
@@ -69,7 +68,7 @@ public class Movimiento : MonoBehaviour
         }
     }
 
-    bool Suelo()
+    bool Suelo() // COMPROBAR QUE TOQUE EL SUELO 
     {
       RaycastHit2D rayo = Physics2D.BoxCast(colliderPies.bounds.center, new Vector2(colliderPies.bounds.size.x, colliderPies.bounds.size.y), 0f, Vector2.down, 0.5f, capaSuelo);
       return rayo.collider != null; 
