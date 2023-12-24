@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e06a3566f407a784695be073a052104d
+guid: 0aed61878ee35df4cbcb59af0ba792de
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,6 +94,32 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -110,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SaltoLobo_0
+      name: Lobo_Muere_0
       rect:
         serializedVersion: 2
-        x: 44
-        y: 0
-        width: 56
-        height: 83
+        x: 28
+        y: 4
+        width: 198
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2bf9c224c995f348ba58c40bf20e8bb
-      internalID: 686365531
+      spriteID: 4fd953bc77166ce479057c8756348f40
+      internalID: -1738767099
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SaltoLobo_1
+      name: Lobo_Muere_1
       rect:
         serializedVersion: 2
-        x: 126
-        y: 0
-        width: 63
-        height: 88
+        x: 284
+        y: 5
+        width: 88
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,18 +171,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 310a9827fa8cd7146af6fe1c9355b6e7
-      internalID: -690096897
+      spriteID: 70c7121ed71ae9346b965335f285edbf
+      internalID: -808863785
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SaltoLobo_2
+      name: Lobo_Muere_2
       rect:
         serializedVersion: 2
-        x: 207
-        y: 12
+        x: 488
+        y: 6
         width: 73
         height: 86
       alignment: 0
@@ -166,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d2a08a598deb2c4697250ff00891cb0
-      internalID: 799871856
+      spriteID: 7385d6420fa9db64eb9d793cd1f6b3a3
+      internalID: -1204102448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SaltoLobo_3
+      name: Lobo_Muere_3
       rect:
         serializedVersion: 2
-        x: 303
-        y: 20
-        width: 64
-        height: 80
+        x: 685
+        y: 6
+        width: 76
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88bf65cbd071b264ba668da4e1e6d6e5
-      internalID: 284307228
+      spriteID: 542cdc7e76ca03f4faf09eec4e58c9ee
+      internalID: 28381673
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SaltoLobo_4
+      name: Lobo_Muere_4
       rect:
         serializedVersion: 2
-        x: 418
-        y: 0
-        width: 66
-        height: 100
+        x: 888
+        y: 6
+        width: 73
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76daa6c9f4f17914abe68d1d341ea9a3
-      internalID: -1478744571
+      spriteID: 0c2b25dd7d6105a47a602353ee6c8127
+      internalID: 457665138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SaltoLobo_5
+      name: Lobo_Muere_5
       rect:
         serializedVersion: 2
-        x: 519
-        y: 0
-        width: 67
-        height: 96
+        x: 1092
+        y: 5
+        width: 81
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: befdbd90c2025db4a86e9783711144d6
-      internalID: -1458535394
+      spriteID: 257ab862e0d5ace4b9c49d11e47c02b0
+      internalID: 481535949
       vertices: []
       indices: 
       edges: []
@@ -246,12 +272,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SaltoLobo_0: 686365531
-      SaltoLobo_1: -690096897
-      SaltoLobo_2: 799871856
-      SaltoLobo_3: 284307228
-      SaltoLobo_4: -1478744571
-      SaltoLobo_5: -1458535394
+      Lobo_Muere_0: -1738767099
+      Lobo_Muere_1: -808863785
+      Lobo_Muere_2: -1204102448
+      Lobo_Muere_3: 28381673
+      Lobo_Muere_4: 457665138
+      Lobo_Muere_5: 481535949
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
