@@ -1,15 +1,13 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Android.Types;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Movimiento : MonoBehaviour
 {
-    [SerializeField] AudioManager audioManager;
-    [SerializeField] AudioClip clip;
-    private Animator animaciones;
-
     [SerializeField, Range(0, 100)] private float velocidad;
     [SerializeField, Range(0, 100)] private float salto;
     [SerializeField] private int saltosMax;
@@ -18,7 +16,8 @@ public class Movimiento : MonoBehaviour
     [SerializeField] private BoxCollider2D colliderPies;
     private bool direccion = true;
     private Rigidbody2D rb2D;
-
+    private Animator animaciones;
+    
     void Start()
     {
         saltosMax = 2;
@@ -30,13 +29,11 @@ public class Movimiento : MonoBehaviour
         this.colliderPies = GetComponent<BoxCollider2D>();
     }
 
-
     void Update()
     {
         Moverse();
         Salto();
         Animaciones();
-        //ComprobarTransformacion();
     }
 
 
@@ -46,6 +43,7 @@ public class Movimiento : MonoBehaviour
         float Horizontal = Input.GetAxis("Horizontal");
         rb2D.velocity = new Vector2(Horizontal * velocidad, rb2D.velocity.y);
         Orientacion(Horizontal);
+ 
     }
 
     void Orientacion(float dir)
@@ -77,19 +75,6 @@ public class Movimiento : MonoBehaviour
         return rayo.collider != null;
     }
 
-    /* void ComprobarTransformacion()
-     {
-         if (Input.GetKey(KeyCode.X))
-         {
-             transformacion = true;
-         }
-
-         else if (Input.GetKey(KeyCode.C))
-         {
-             transformacion = false;
-         }
-     }*/
-
     public void Animaciones()
     {
         //ANIMACIONES
@@ -115,14 +100,13 @@ public class Movimiento : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && contadorSaltos > 1) // SALTA
         {
             animaciones.SetInteger("cambioEstado", 6);
-
+            
         }
 
         if (Input.GetKey(KeyCode.X)) // ANIMACION DE SE TRANSFORMA
         {
             animaciones.SetInteger("cambioEstado", 1);
             animaciones.SetBool("transformacion", true);
-            AudioManager.audioManager.Reproducir(clip);
         }
 
         if (Input.GetKey(KeyCode.C)) // ANIMACION DE SE DESTRANSFORMA

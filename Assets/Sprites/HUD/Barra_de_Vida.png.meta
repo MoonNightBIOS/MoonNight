@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3f1aebdb5863563409def78ecf66889d
+guid: ed59b5504628b494db987a48dc45ee93
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,19 +94,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -132,17 +119,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jabali_0
+      name: Barra_de_Vida_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 23
-        width: 76
-        height: 55
+        x: 9
+        y: 29
+        width: 83
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd3dd55f62ea2024ebba7f16fbb4140f
-      internalID: 391371168
+      spriteID: c729dc3ca48c72f47987f2b18f96a418
+      internalID: 625665661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jabali_1
+      name: Barra_de_Vida_1
       rect:
         serializedVersion: 2
-        x: 112
-        y: 22
-        width: 70
-        height: 56
+        x: 109
+        y: 29
+        width: 83
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 148c613cbcb02864d8daf84ed8c4b743
-      internalID: 983805930
+      spriteID: 79f26b525bb7dbf4ea69aa9b8bb36c5b
+      internalID: 608034352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jabali_2
+      name: Barra_de_Vida_2
       rect:
         serializedVersion: 2
-        x: 212
-        y: 21
-        width: 66
-        height: 57
+        x: 209
+        y: 29
+        width: 83
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,8 +192,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8e7f8da6af6bdd47ac2713f209dbd72
-      internalID: 1353488264
+      spriteID: 0b7d01f262e1fbf48b4b201f245746cb
+      internalID: -581606548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barra_de_Vida_3
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 29
+        width: 83
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c31fc34bb6a6de45991e6a94d0197a7
+      internalID: 1982391483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barra_de_Vida_4
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 29
+        width: 83
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ff80ec8a9371e4da4730eb54fa59b5
+      internalID: -878457591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barra_de_Vida_5
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 29
+        width: 83
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01eda3c29cce9174caf4965f87fe6777
+      internalID: -125207891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barra_de_Vida_6
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 29
+        width: 83
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0448746d0d09704982d83aa86e9430e
+      internalID: -1782393189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barra_de_Vida_7
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 29
+        width: 83
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58b6083ad0e32c34187965c7b7d3a2d7
+      internalID: 606904898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barra_de_Vida_8
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 29
+        width: 83
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a679436db04e3064dba905254057872e
+      internalID: -1614871220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barra_de_Vida_9
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 29
+        width: 83
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8269a3e3360d96f4c8c9da9fed0c906a
+      internalID: 1597739609
       vertices: []
       indices: 
       edges: []
@@ -209,9 +356,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      jabali_0: 391371168
-      jabali_1: 983805930
-      jabali_2: 1353488264
+      Barra_de_Vida_0: 625665661
+      Barra_de_Vida_1: 608034352
+      Barra_de_Vida_2: -581606548
+      Barra_de_Vida_3: 1982391483
+      Barra_de_Vida_4: -878457591
+      Barra_de_Vida_5: -125207891
+      Barra_de_Vida_6: -1782393189
+      Barra_de_Vida_7: 606904898
+      Barra_de_Vida_8: -1614871220
+      Barra_de_Vida_9: 1597739609
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

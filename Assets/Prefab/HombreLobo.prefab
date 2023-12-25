@@ -187,6 +187,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   colliderPies: {fileID: 7467566453739319470}
+  clipSalto: {fileID: 8300000, guid: d13e836c7bbfe554a95d81ab385f0a8f, type: 3}
+  clipCorrer: {fileID: 8300000, guid: a14b4cbf5eae64e4dbf65fb991ef5e25, type: 3}
+  clipTransformarse: {fileID: 8300000, guid: 55c120734e2846a42bcfbc7b74f2ba32, type: 3}
 --- !u!95 &8274449136480859021
 Animator:
   serializedVersion: 5
