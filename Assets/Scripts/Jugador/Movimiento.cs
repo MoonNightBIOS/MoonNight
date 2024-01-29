@@ -93,7 +93,7 @@ public class Movimiento : MonoBehaviour
             animaciones.SetInteger("cambioEstado", 0);
         }
 
-        if (Input.GetKey(KeyCode.Space) && contadorSaltos > 1) // SALTA
+        if (Input.GetKeyDown(KeyCode.Space)) // SALTA
         {
             animaciones.SetInteger("cambioEstado", 6);
             
@@ -102,6 +102,22 @@ public class Movimiento : MonoBehaviour
         if (Input.GetKey(KeyCode.X)) // ANIMACION DE SE TRANSFORMA
         {
             animaciones.SetInteger("cambioEstado", 1);
+            animaciones.SetBool("transformacion", true);
+        }
+
+        if (animaciones.GetBool("transformacion") == true && Input.GetKey(KeyCode.D)) // ANIMACION DE SE TRANSFORMA
+        {
+            animaciones.SetInteger("cambioEstado", 10);
+        }
+
+        if (animaciones.GetBool("transformacion") == true && Input.GetKeyUp(KeyCode.D)) // ANIMACION DE SE TRANSFORMA
+        {
+            animaciones.SetInteger("cambioEstado", 1);
+        }
+
+        if (Input.GetKey(KeyCode.X) && Input.GetKey(KeyCode.A)) // ANIMACION DE SE TRANSFORMA
+        {
+            animaciones.SetInteger("cambioEstado", 10);
             animaciones.SetBool("transformacion", true);
         }
 
