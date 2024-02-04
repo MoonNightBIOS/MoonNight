@@ -73,7 +73,8 @@ public class Movimiento : MonoBehaviour
 
     public void Animaciones()
     {
-        //ANIMACIONES
+        //ANIMACIONES DEL HOMBRE 
+
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) // ANIMACION DE MOVIMIENTO A LA IZQUIERDA
         {
@@ -88,7 +89,7 @@ public class Movimiento : MonoBehaviour
         {
             animaciones.SetInteger("cambioEstado", 3);
         }
-        else if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow)) // CAMBIO DE ANIMACION A QUIETO
+        else if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow)) // CAMBIO DE ANIMACION DE MOVIMIENTO A QUIETO 
         {
             animaciones.SetInteger("cambioEstado", 0);
         }
@@ -99,18 +100,20 @@ public class Movimiento : MonoBehaviour
             
         }
 
+        //ANIMACION DEL LOBO
+
         if (Input.GetKey(KeyCode.X)) // ANIMACION DE SE TRANSFORMA
         {
             animaciones.SetInteger("cambioEstado", 1);
             animaciones.SetBool("transformacion", true);
         }
 
-        if (animaciones.GetBool("transformacion") == true && Input.GetKey(KeyCode.D)) // ANIMACION DE SE TRANSFORMA
+        if (animaciones.GetBool("transformacion") == true && Input.GetKey(KeyCode.D)) // ANIMACION DE MOVIMIENTO COMO LOBO
         {
             animaciones.SetInteger("cambioEstado", 10);
         }
 
-        if (animaciones.GetBool("transformacion") == true && Input.GetKeyUp(KeyCode.D)) // ANIMACION DE SE TRANSFORMA
+        if (animaciones.GetBool("transformacion") == true && Input.GetKeyUp(KeyCode.D)) // CAMBIO DE ANIMACION DE MOVIMIENTO COMO LOBO COMO IDE LOBO
         {
             animaciones.SetInteger("cambioEstado", 1);
         }
