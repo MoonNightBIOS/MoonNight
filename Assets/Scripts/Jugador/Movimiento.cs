@@ -115,10 +115,14 @@ public class Movimiento : MonoBehaviour
             animaciones.SetInteger("cambioEstado", 1);
         }
 
-        if (Input.GetKey(KeyCode.X) && Input.GetKey(KeyCode.A)) // ANIMACION DE SE TRANSFORMA
+        if (animaciones.GetBool("transformacion") == true && Input.GetKey(KeyCode.A)) // ANIMACION DE SE TRANSFORMA
         {
             animaciones.SetInteger("cambioEstado", 10);
-            animaciones.SetBool("transformacion", true);
+        }
+
+        if (animaciones.GetBool("transformacion") == true && Input.GetKeyUp(KeyCode.A)) // ANIMACION DE SE TRANSFORMA
+        {
+            animaciones.SetInteger("cambioEstado", 1);
         }
 
         if (Input.GetKey(KeyCode.C)) // ANIMACION DE SE DESTRANSFORMA
