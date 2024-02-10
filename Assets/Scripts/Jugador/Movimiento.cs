@@ -106,6 +106,7 @@ public class Movimiento : MonoBehaviour
         {
             animaciones.SetInteger("cambioEstado", 1);
             animaciones.SetBool("transformacion", true);
+            this.transform.localScale = new Vector3(4, 4, 0);
         }
 
         if (animaciones.GetBool("transformacion") == true && Input.GetKey(KeyCode.D)) // ANIMACION DE MOVIMIENTO (LOBO)
@@ -132,6 +133,7 @@ public class Movimiento : MonoBehaviour
         {
             animaciones.SetInteger("cambioEstado", 2);
             animaciones.SetBool("transformacion", false);
+            this.transform.localScale = new Vector3(3, 3, 0);
         }
 
         if (Input.GetKey(KeyCode.Z)) // ANIMACION DE ATAQUE
