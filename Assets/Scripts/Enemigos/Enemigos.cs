@@ -15,7 +15,7 @@ public class Enemigos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Detectar al Player
+        // Detectar al Player (sigue sin funcionar)
         if(Input.GetKeyDown(KeyCode.Space))
         {
            obstaculo=Physics2D.Raycast(transform.position, transform.forward, 10f);
