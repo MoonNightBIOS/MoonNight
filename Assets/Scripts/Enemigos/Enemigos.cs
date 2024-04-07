@@ -15,7 +15,7 @@ public class Enemigos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Detectar al Player (sigue sin funcionar)
+        // Detectar al Player (funcionando al momento, falta la distacia)
         if(Input.GetKeyDown(KeyCode.Space))
         {
            obstaculo=Physics2D.Raycast(transform.position, transform.forward, 10f);
@@ -25,7 +25,7 @@ public class Enemigos : MonoBehaviour
 
                 // Nombre de con que Choco el Rayo
 
-                Debug.Log("Sw detecto : " + obstaculo.transform.gameObject.name);
+                Debug.Log("Se detecto : " + obstaculo.transform.gameObject.name);
 
                 // Obtener la ditancia
 
