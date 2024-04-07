@@ -43386,7 +43386,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 104
-      m_TileSpriteIndex: 57
+      m_TileSpriteIndex: 59
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -43396,7 +43396,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 103
-      m_TileSpriteIndex: 53
+      m_TileSpriteIndex: 57
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -80763,8 +80763,8 @@ Tilemap:
     m_Data: {fileID: 1493735177, guid: a4eb5e1758ae2da47a5b14d07cc065a1, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: -1193125099, guid: a4eb5e1758ae2da47a5b14d07cc065a1, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1943744317, guid: a4eb5e1758ae2da47a5b14d07cc065a1, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: -1835919481, guid: a4eb5e1758ae2da47a5b14d07cc065a1, type: 3}
   - m_RefCount: 2
@@ -80772,11 +80772,11 @@ Tilemap:
   - m_RefCount: 4
     m_Data: {fileID: -1523841209, guid: a4eb5e1758ae2da47a5b14d07cc065a1, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -300124983, guid: a4eb5e1758ae2da47a5b14d07cc065a1, type: 3}
+    m_Data: {fileID: 1943744317, guid: a4eb5e1758ae2da47a5b14d07cc065a1, type: 3}
   - m_RefCount: 25
     m_Data: {fileID: -452589835, guid: a4eb5e1758ae2da47a5b14d07cc065a1, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -300124983, guid: a4eb5e1758ae2da47a5b14d07cc065a1, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 722233994, guid: a4eb5e1758ae2da47a5b14d07cc065a1, type: 3}
   - m_RefCount: 133
@@ -82120,6 +82120,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f260093ecb0dda94a82d73c149520887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rayObject: {fileID: 1352492442}
+  enemigos: {fileID: 0}
+--- !u!4 &1352492442 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7721542352120305610, guid: f4e5005aa8f20ed4f93a7e916692d17d, type: 3}
+  m_PrefabInstance: {fileID: 1456974367243155227}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1382844354
 GameObject:
   m_ObjectHideFlags: 0
@@ -83223,6 +83230,10 @@ PrefabInstance:
     - target: {fileID: 5299931967204519932, guid: f4e5005aa8f20ed4f93a7e916692d17d, type: 3}
       propertyPath: m_Name
       value: Jabali_Enemigo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299931967204519932, guid: f4e5005aa8f20ed4f93a7e916692d17d, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5542607576989175253, guid: f4e5005aa8f20ed4f93a7e916692d17d, type: 3}
       propertyPath: m_Enabled

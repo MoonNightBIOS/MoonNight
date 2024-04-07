@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Enemigos : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Transform rayObject;
+    public GameObject enemigos;
+
 
     RaycastHit2D obstaculo;
     void Start()
@@ -16,6 +18,7 @@ public class Enemigos : MonoBehaviour
     void Update()
     {
         // Detectar al Player (funcionando al momento, falta la distacia)
+        
         if(Input.GetKeyDown(KeyCode.Space))
         {
            obstaculo=Physics2D.Raycast(transform.position, transform.forward, 10f);
